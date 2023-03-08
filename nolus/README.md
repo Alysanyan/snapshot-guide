@@ -5,13 +5,13 @@ You can browse the logs for current snapshot date, block height, and file size i
 
 
 #### Stop node
-`sudo systemctl stop defundd`
+`sudo systemctl stop nolusd`
 #### Save backup priv_validator_state
-`cp $HOME/.defund/data/priv_validator_state.json` `$HOME/.defund/priv_validator_state.json.backup`
+`cp $HOME/.nolusd/data/priv_validator_state.json` `$HOME/.nolusd/priv_validator_state.json.backup`
 #### Delete data and download snapshot
-`rm -rf $HOME/.defund/data $HOME/.defund/wasm`
+`rm -rf $HOME/.nolusd/data $HOME/.nolusd/wasm`
 `curl http://195.201.237.185/nolus/nolus-rila_latest.tar | tar -xf - -C $HOME/.defund`
 #### Restote backup priv_validator_state
-`mv $HOME/.defund/priv_validator_state.json.backup` `$HOME/.defund/data/priv_validator_state.json`
+`mv $HOME/.nolusd/priv_validator_state.json.backup` `$HOME/.nolusd/data/priv_validator_state.json`
 #### Start node and check the logs
-`sudo systemctl restart defundd && sudo journalctl -u defundd -f`
+`sudo systemctl restart nolusd && sudo journalctl -u nolusd -f`
